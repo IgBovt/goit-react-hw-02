@@ -1,12 +1,20 @@
-const Options = () => {
-  return (
-    <>
-      <button type="button">Good</button>
-      <button type="button">Neutral</button>
-      <button type="button">Bad</button>
-      <button type="button">Reset</button>
-    </>
-  );
-};
+import { useState } from 'react';
 
-export default Options;
+export default function Options({ names }) {
+  const [clicks, setClicks] = useState(0);
+
+  function updateFeedback() {
+    console.log('message');
+  }
+  return (
+    <ul>
+      {names.map((name, index) => (
+        <li key={index}>
+          <button type="button" onClick={updateFeedback}>
+            {name}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}

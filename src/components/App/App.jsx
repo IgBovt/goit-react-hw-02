@@ -1,5 +1,6 @@
 import Description from '../Description/Description';
 import Options from '../Options/Options';
+import Feedback from '../Feedback/Feedback';
 
 const App = () => {
   const state = {
@@ -15,7 +16,12 @@ const App = () => {
         text={`Please leave your feedback about our service by selecting one of the
         options below.`}
       />
-      <Options />
+      <Options names={['Good', 'Neutral', 'Bad', 'Reset']} />
+      <Feedback
+        good={state.good}
+        bad={state.bad}
+        neutral={state.neutral}
+      />{' '}
     </>
   );
 };
