@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  margin-right: 4px;
+}
+.listResult {
+  color: #403f41;
+}

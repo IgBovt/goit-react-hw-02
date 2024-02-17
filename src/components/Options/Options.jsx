@@ -1,10 +1,16 @@
+import css from './Options.module.css';
+
 export default function Options({ names, onBtn, total, setClicks }) {
   return (
     <div>
-      <ul>
+      <ul className={css.list}>
         {names.map((name, index) => (
           <li key={index}>
-            <button type="button" onClick={() => onBtn(name)}>
+            <button
+              className={css.btn}
+              type="button"
+              onClick={() => onBtn(name)}
+            >
               {name}
             </button>
           </li>
@@ -12,6 +18,7 @@ export default function Options({ names, onBtn, total, setClicks }) {
       </ul>
       {total !== 0 && (
         <button
+          className={css.btnReset}
           type="button"
           onClick={() => {
             setClicks({
