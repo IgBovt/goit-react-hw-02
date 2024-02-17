@@ -19,6 +19,9 @@ const App = () => {
   }
 
   const totalFeedback = clicks.good + clicks.neutral + clicks.bad;
+  const percents = Math.round(
+    ((clicks.good + clicks.neutral) / totalFeedback) * 100
+  );
 
   return (
     <>
@@ -38,6 +41,8 @@ const App = () => {
           good={clicks.good}
           bad={clicks.bad}
           neutral={clicks.neutral}
+          total={totalFeedback}
+          percents={percents}
         />
       ) : (
         <Notification text={'No feedback yet'} />
